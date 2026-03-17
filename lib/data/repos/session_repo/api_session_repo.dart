@@ -1,10 +1,11 @@
 import 'package:dio/dio.dart';
+import 'package:f1_dashboard/core/config.dart';
 import 'package:f1_dashboard/data/models/session.dart';
 import 'package:f1_dashboard/data/repos/session_repo/session_repo.dart';
 import 'package:hive/hive.dart';
 
 class ApiSessionRepo extends SessionRepo {
-  final String _apiUrl = 'https://api.openf1.org/v1/sessions';
+  final String _apiUrl = '${Config.baseApiUrl}/sessions';
   final _dio = Dio();
 
   final _box = Hive.box(name: 'cache');
